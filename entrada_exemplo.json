@@ -1,0 +1,10 @@
+{
+    "vertices": ["A", "B", "C", "D"],
+    "arestas": [
+      {"origem": "A", "destino": "B", "peso": 2},
+      {"origem": "A", "destino": "C", "peso": 3},
+      {"origem": "B", "destino": "D", "peso": 4},
+      {"origem": "C", "destino": "D", "peso": 1}
+    ]
+  }
+  
