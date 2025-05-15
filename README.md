@@ -119,4 +119,7 @@ python main.py
 relatorio.txt
 ```
 
-Esse arquivo toda a simulação realizada.
+#### Esse arquivo tem toda a simulação realizada.
+
+* Criadores: Pedro Rafael e Vinícius Inácio
+* Professor da Disciplina: Carlos Vinícius
