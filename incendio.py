@@ -1,7 +1,7 @@
 from collections import deque
 
 def simular_propagacao_fogo(grafo, vertice_inicial):
-    # Usa BFS para propagar o fogo em ondas (tempo discreto)
+    # Usa BFS para propagar o fogo em ondas
     queimados = set()
     tempo_por_vertice = {}
     fila = deque()

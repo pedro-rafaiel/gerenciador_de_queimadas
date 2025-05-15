@@ -1,9 +1,6 @@
 from collections import deque
 
 def calcular_tempo_fogo(grafo, origem_incendio):
-    """
-    Retorna um dicionário com o tempo em que o fogo chega a cada vértice.
-    """
     tempo_fogo = {origem_incendio: 0}
     fila = deque([(origem_incendio, 0)])
 
@@ -26,7 +23,7 @@ def simular_combate_fogo(grafo, origem_incendio, postos, pontos_de_coleta, agua_
     total_agua_usada = 0
     tempo_total = max(tempo_fogo.values())
 
-    print(f"\n🔄 Simulando combate com fogo iniciado em {origem_incendio}...\n")
+    print(f"\n Simulando combate com fogo iniciado em {origem_incendio}...\n")
 
     for vertice in sorted(tempo_fogo, key=tempo_fogo.get):
         agua_req = agua_necessaria.get(vertice, 3)
@@ -34,17 +31,17 @@ def simular_combate_fogo(grafo, origem_incendio, postos, pontos_de_coleta, agua_
         tempo_queima = tempo_fogo[vertice]
         pode_apagar = False
 
-        print(f"\n🔥 Fogo chegará em {vertice} no tempo {tempo_queima}")
-        print(f"➡️ Requisitos: {agua_req}L de água, {brigadistas_req} brigadistas")
+        print(f"\n Fogo chegará em {vertice} no tempo {tempo_queima}")
+        print(f" Requisitos: {agua_req}L de água, {brigadistas_req} brigadistas")
 
         for posto in postos:
             caminho, tempo = posto.enviar_para(vertice, grafo, pontos_de_coleta)
             if caminho:
-                print(f"🚒 Posto {posto.localizacao} → {vertice}")
+                print(f" Posto {posto.localizacao} → {vertice}")
                 print(f"    Caminho: {' -> '.join(caminho)} | Tempo estimado: {tempo}")
                 print(f"    Caminhões disponíveis: {len(posto.caminhoes)}")
                 for idx, c in enumerate(posto.caminhoes):
-                    print(f"      🛻 Caminhão {idx + 1}: {c.agua_restante}/{c.capacidade_agua}L em {c.localizacao}")
+                    print(f"       Caminhão {idx + 1}: {c.agua_restante}/{c.capacidade_agua}L em {c.localizacao}")
 
                 if tempo < tempo_queima:
                     # Verifica caminhões disponíveis com água suficiente
@@ -54,22 +51,22 @@ def simular_combate_fogo(grafo, origem_incendio, postos, pontos_de_coleta, agua_
                         caminhao_usado = caminhoes_ok[0]
                         caminhao_usado.usar_agua(agua_req)
                         caminhao_usado.localizacao = vertice
-                        print(f"    ✅ Chegou com {agua_req}L e apagou o fogo. Restante: {caminhao_usado.agua_restante}L")
+                        print(f"     Chegou com {agua_req}L e apagou o fogo. Restante: {caminhao_usado.agua_restante}L")
                         pode_apagar = True
                         caminhos[vertice] = caminho
                         total_agua_usada += agua_req
                         break
                     else:
-                        print("    ❌ Chegou a tempo, mas sem água ou caminhões suficientes.")
+                        print("     Chegou a tempo, mas sem água ou caminhões suficientes.")
                 else:
-                    print("    ❌ Chegou tarde demais, o fogo já queimou o local.")
+                    print("     Chegou tarde demais, o fogo já queimou o local.")
             else:
-                print(f"    ❌ Nenhum caminho viável até {vertice}")
+                print(f"     Nenhum caminho viável até {vertice}")
 
-        resultado[vertice] = "✅ Salvo" if pode_apagar else "🔥 Queimado"
+        resultado[vertice] = " Salvo" if pode_apagar else " Queimado"
 
-    salvos = [v for v in resultado if resultado[v] == "✅ Salvo"]
-    queimados = [v for v in resultado if resultado[v] == "🔥 Queimado"]
+    salvos = [v for v in resultado if resultado[v] == " Salvo"]
+    queimados = [v for v in resultado if resultado[v] == " Queimado"]
 
     return {
         "inicio": origem_incendio,

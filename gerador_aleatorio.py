@@ -17,7 +17,6 @@ def gerar_grafo_aleatorio(num_vertices=6, num_arestas=8, peso_min=1, peso_max=5)
         ]
     }
 
-    # Escolher posições aleatórias
     postos = random.sample(vertices, 3)
     pontos_de_coleta = random.sample([v for v in vertices if v not in postos], 2)
     origem_fogo = random.choice([v for v in vertices if v not in postos])

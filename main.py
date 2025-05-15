@@ -8,29 +8,24 @@ import random
 # Gera o grafo e posições aleatórias de postos, coleta e foco inicial
 grafo_dados, postos, pontos_de_coleta, origem_incendio = gerar_grafo_aleatorio()
 
-# Monta o grafo com base nas arestas
 grafo = Grafo()
 for aresta in grafo_dados["arestas"]:
     grafo.adicionar_aresta(aresta["origem"], aresta["destino"], aresta["peso"])
 
 grafo.mostrar_grafo()
 
-# Exibe os pontos definidos aleatoriamente
 print(f"\n Postos de Brigadistas: {postos}")
 print(f" Pontos de Coleta de Água: {pontos_de_coleta}")
 print(f" Incêndio começa em: {origem_incendio}")
 
-# Os postos também funcionam como pontos de coleta
 pontos_de_coleta_completos = list(set(pontos_de_coleta + postos))
 
-# Define requisitos aleatórios por vértice (água e equipes necessárias)
 agua_necessaria = {}
 brigadistas_necessarios = {}
 for vertice in grafo.adjacencia:
     agua_necessaria[vertice] = random.randint(2, 6)
     brigadistas_necessarios[vertice] = random.randint(1, 2)
 
-# Mostra os requisitos por vértice
 print("\n Requisitos por vértice:")
 for v in sorted(grafo.adjacencia):
     print(f"{v}: {agua_necessaria[v]}L de água, {brigadistas_necessarios[v]} brigadista(s)")
@@ -41,13 +36,11 @@ print(f"\n Propagação do fogo a partir de '{origem_incendio}':")
 for v in sorted(tempos, key=tempos.get):
     print(f"{v} queimado no tempo {tempos[v]}")
 
-# Cria os postos de brigadistas (cada um com 2 caminhões de 10L)
 postos_objetos = [
     PostoBrigada(localizacao=p, quantidade_caminhoes=2, capacidade_caminhao=10)
     for p in postos
 ]
 
-# Roda uma simulação de combate para cada vértice como foco de incêndio
 print("\nRESULTADO GERAL DAS SIMULAÇÕES:\n")
 
 for origem in grafo.adjacencia:
@@ -63,7 +56,6 @@ for origem in grafo.adjacencia:
         brigadistas_necessarios
     )
 
-    # Exibe os resultados da simulação (salvos, queimados, água e caminhos)
     print("────────────────────────────────────────")
     print(f"Fogo iniciado em: {dados['inicio']}")
     print(f"Vértices salvos ({len(dados['salvos'])}): {', '.join(dados['salvos'])}")

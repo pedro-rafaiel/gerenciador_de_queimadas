@@ -13,7 +13,7 @@ class CaminhaoBrigada:
         return True
 
     def reabastecer(self):
-        print(f"💧 Caminhão reabastecendo em {self.localizacao}")
+        print(f" Caminhão reabastecendo em {self.localizacao}")
         self.agua_restante = self.capacidade_agua
 
 
@@ -33,16 +33,17 @@ class PostoBrigada:
 
             agua_necessaria = len(caminho)  # simulação: 1 litro por vértice
 
-            print(f"\n🚚 Caminhão saindo de {caminhao.localizacao} com {caminhao.agua_restante}L de água")
+            print(f"\n Caminhão saindo de {caminhao.localizacao} com {caminhao.agua_restante}L de água")
             print(f"    Destino: {destino} | Caminho: {' -> '.join(caminho)} | Tempo: {tempo}")
 
             if caminhao.agua_restante >= agua_necessaria:
                 caminhao.usar_agua(agua_necessaria)
                 caminhao.localizacao = destino
-                print(f"    ✅ Chegou e ainda tem {caminhao.agua_restante}L restantes")
+                print(f"     Chegou e ainda tem {caminhao.agua_restante}L restantes")
                 return caminho, tempo
+
             else:
-                print(f"    ⚠️ Água insuficiente ({caminhao.agua_restante}L). Buscando reabastecimento...")
+                print(f"     Água insuficiente ({caminhao.agua_restante}L). Buscando reabastecimento...")
 
                 menor_tempo = float('inf')
                 melhor_rota = None
@@ -57,6 +58,13 @@ class PostoBrigada:
                             melhor_rota = caminho_reab[:-1] + caminho_final
 
                 if melhor_rota:
-                    print(f"    🔄 Fez reabastecimento em ponto de coleta")
+                    print(f"     Fez reabastecimento em ponto de coleta")
                     caminhao.reabastecer()
-                    caminhao
+                    caminhao.usar_agua(len(melhor_rota))
+                    caminhao.localizacao = destino
+                    print(f"     Caminho após reabastecimento: {' -> '.join(melhor_rota)}")
+                    print(f"     Chegou com {caminhao.agua_restante}L restantes")
+                    return melhor_rota, menor_tempo
+
+        print(f"   Nenhum caminhão disponível ou com rota viável para {destino}")
+        return [], float('inf')

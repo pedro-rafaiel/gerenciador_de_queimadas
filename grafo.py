@@ -43,7 +43,6 @@ class Grafo:
                     anteriores[vizinho] = atual
                     heapq.heappush(fila, (nova_distancia, vizinho))
 
-        # Reconstrução do caminho
         caminho = []
         atual = destino
         while atual:
