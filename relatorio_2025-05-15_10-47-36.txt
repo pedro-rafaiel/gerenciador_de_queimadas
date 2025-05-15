@@ -1,0 +1,668 @@
+V1 -> [('V0', 1), ('V2', 3)]
+V0 -> [('V1', 1), ('V4', 3), ('V3', 4)]
+V4 -> [('V0', 3), ('V5', 1)]
+V5 -> [('V3', 5), ('V4', 1)]
+V3 -> [('V5', 5), ('V0', 4)]
+V2 -> [('V1', 3)]
+
+ Postos de Brigadistas: ['V3', 'V4', 'V2']
+ Pontos de Coleta de Água: ['V5', 'V1']
+ Incêndio começa em: V0
+
+ Requisitos por vértice:
+V0: 6L de água, 2 brigadista(s)
+V1: 5L de água, 2 brigadista(s)
+V2: 5L de água, 2 brigadista(s)
+V3: 5L de água, 1 brigadista(s)
+V4: 5L de água, 2 brigadista(s)
+V5: 5L de água, 2 brigadista(s)
+
+ Propagação do fogo a partir de 'V0':
+V0 queimado no tempo 0
+V1 queimado no tempo 1
+V4 queimado no tempo 1
+V3 queimado no tempo 1
+V2 queimado no tempo 2
+V5 queimado no tempo 2
+
+RESULTADO GERAL DAS SIMULAÇÕES:
+
+
+ Simulando combate com fogo iniciado em V1...
+
+
+ Fogo chegará em V1 no tempo 0
+ Requisitos: 5L de água, 2 brigadistas
+
+ Caminhão saindo de V3 com 10L de água
+    Destino: V1 | Caminho: V3 -> V0 -> V1 | Tempo: 5
+     Chegou e ainda tem 7L restantes
+ Posto V3 → V1
+    Caminho: V3 -> V0 -> V1 | Tempo estimado: 5
+    Caminhões disponíveis: 2
+       Caminhão 1: 7/10L em V1
+       Caminhão 2: 10/10L em V3
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Caminhão saindo de V4 com 10L de água
+    Destino: V1 | Caminho: V4 -> V0 -> V1 | Tempo: 4
+     Chegou e ainda tem 7L restantes
+ Posto V4 → V1
+    Caminho: V4 -> V0 -> V1 | Tempo estimado: 4
+    Caminhões disponíveis: 2
+       Caminhão 1: 7/10L em V1
+       Caminhão 2: 10/10L em V4
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Caminhão saindo de V2 com 10L de água
+    Destino: V1 | Caminho: V2 -> V1 | Tempo: 3
+     Chegou e ainda tem 8L restantes
+ Posto V2 → V1
+    Caminho: V2 -> V1 | Tempo estimado: 3
+    Caminhões disponíveis: 2
+       Caminhão 1: 8/10L em V1
+       Caminhão 2: 10/10L em V2
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Fogo chegará em V0 no tempo 1
+ Requisitos: 6L de água, 2 brigadistas
+
+ Caminhão saindo de V1 com 7L de água
+    Destino: V0 | Caminho: V1 -> V0 | Tempo: 1
+     Chegou e ainda tem 5L restantes
+ Posto V3 → V0
+    Caminho: V1 -> V0 | Tempo estimado: 1
+    Caminhões disponíveis: 2
+       Caminhão 1: 5/10L em V0
+       Caminhão 2: 10/10L em V3
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Caminhão saindo de V1 com 7L de água
+    Destino: V0 | Caminho: V1 -> V0 | Tempo: 1
+     Chegou e ainda tem 5L restantes
+ Posto V4 → V0
+    Caminho: V1 -> V0 | Tempo estimado: 1
+    Caminhões disponíveis: 2
+       Caminhão 1: 5/10L em V0
+       Caminhão 2: 10/10L em V4
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Caminhão saindo de V1 com 8L de água
+    Destino: V0 | Caminho: V1 -> V0 | Tempo: 1
+     Chegou e ainda tem 6L restantes
+ Posto V2 → V0
+    Caminho: V1 -> V0 | Tempo estimado: 1
+    Caminhões disponíveis: 2
+       Caminhão 1: 6/10L em V0
+       Caminhão 2: 10/10L em V2
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Fogo chegará em V2 no tempo 3
+ Requisitos: 5L de água, 2 brigadistas
+
+ Caminhão saindo de V0 com 5L de água
+    Destino: V2 | Caminho: V0 -> V1 -> V2 | Tempo: 4
+     Chegou e ainda tem 2L restantes
+ Posto V3 → V2
+    Caminho: V0 -> V1 -> V2 | Tempo estimado: 4
+    Caminhões disponíveis: 2
+       Caminhão 1: 2/10L em V2
+       Caminhão 2: 10/10L em V3
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Caminhão saindo de V0 com 5L de água
+    Destino: V2 | Caminho: V0 -> V1 -> V2 | Tempo: 4
+     Chegou e ainda tem 2L restantes
+ Posto V4 → V2
+    Caminho: V0 -> V1 -> V2 | Tempo estimado: 4
+    Caminhões disponíveis: 2
+       Caminhão 1: 2/10L em V2
+       Caminhão 2: 10/10L em V4
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Caminhão saindo de V0 com 6L de água
+    Destino: V2 | Caminho: V0 -> V1 -> V2 | Tempo: 4
+     Chegou e ainda tem 3L restantes
+ Posto V2 → V2
+    Caminho: V0 -> V1 -> V2 | Tempo estimado: 4
+    Caminhões disponíveis: 2
+       Caminhão 1: 3/10L em V2
+       Caminhão 2: 10/10L em V2
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Fogo chegará em V4 no tempo 4
+ Requisitos: 5L de água, 2 brigadistas
+
+ Caminhão saindo de V2 com 2L de água
+    Destino: V4 | Caminho: V2 -> V1 -> V0 -> V4 | Tempo: 7
+     Água insuficiente (2L). Buscando reabastecimento...
+     Fez reabastecimento em ponto de coleta
+ Caminhão reabastecendo em V2
+     Caminho após reabastecimento: V2 -> V1 -> V0 -> V4
+     Chegou com 6L restantes
+ Posto V3 → V4
+    Caminho: V2 -> V1 -> V0 -> V4 | Tempo estimado: 7
+    Caminhões disponíveis: 2
+       Caminhão 1: 6/10L em V4
+       Caminhão 2: 10/10L em V3
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Caminhão saindo de V2 com 2L de água
+    Destino: V4 | Caminho: V2 -> V1 -> V0 -> V4 | Tempo: 7
+     Água insuficiente (2L). Buscando reabastecimento...
+     Fez reabastecimento em ponto de coleta
+ Caminhão reabastecendo em V2
+     Caminho após reabastecimento: V2 -> V1 -> V0 -> V4
+     Chegou com 6L restantes
+ Posto V4 → V4
+    Caminho: V2 -> V1 -> V0 -> V4 | Tempo estimado: 7
+    Caminhões disponíveis: 2
+       Caminhão 1: 6/10L em V4
+       Caminhão 2: 10/10L em V4
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Caminhão saindo de V2 com 3L de água
+    Destino: V4 | Caminho: V2 -> V1 -> V0 -> V4 | Tempo: 7
+     Água insuficiente (3L). Buscando reabastecimento...
+     Fez reabastecimento em ponto de coleta
+ Caminhão reabastecendo em V2
+     Caminho após reabastecimento: V2 -> V1 -> V0 -> V4
+     Chegou com 6L restantes
+ Posto V2 → V4
+    Caminho: V2 -> V1 -> V0 -> V4 | Tempo estimado: 7
+    Caminhões disponíveis: 2
+       Caminhão 1: 6/10L em V4
+       Caminhão 2: 10/10L em V2
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Fogo chegará em V3 no tempo 5
+ Requisitos: 5L de água, 1 brigadistas
+
+ Caminhão saindo de V4 com 6L de água
+    Destino: V3 | Caminho: V4 -> V5 -> V3 | Tempo: 6
+     Chegou e ainda tem 3L restantes
+ Posto V3 → V3
+    Caminho: V4 -> V5 -> V3 | Tempo estimado: 6
+    Caminhões disponíveis: 2
+       Caminhão 1: 3/10L em V3
+       Caminhão 2: 10/10L em V3
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Caminhão saindo de V4 com 6L de água
+    Destino: V3 | Caminho: V4 -> V5 -> V3 | Tempo: 6
+     Chegou e ainda tem 3L restantes
+ Posto V4 → V3
+    Caminho: V4 -> V5 -> V3 | Tempo estimado: 6
+    Caminhões disponíveis: 2
+       Caminhão 1: 3/10L em V3
+       Caminhão 2: 10/10L em V4
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Caminhão saindo de V4 com 6L de água
+    Destino: V3 | Caminho: V4 -> V5 -> V3 | Tempo: 6
+     Chegou e ainda tem 3L restantes
+ Posto V2 → V3
+    Caminho: V4 -> V5 -> V3 | Tempo estimado: 6
+    Caminhões disponíveis: 2
+       Caminhão 1: 3/10L em V3
+       Caminhão 2: 10/10L em V2
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Fogo chegará em V5 no tempo 5
+ Requisitos: 5L de água, 2 brigadistas
+
+ Caminhão saindo de V3 com 3L de água
+    Destino: V5 | Caminho: V3 -> V5 | Tempo: 5
+     Chegou e ainda tem 1L restantes
+ Posto V3 → V5
+    Caminho: V3 -> V5 | Tempo estimado: 5
+    Caminhões disponíveis: 2
+       Caminhão 1: 1/10L em V5
+       Caminhão 2: 10/10L em V3
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Caminhão saindo de V3 com 3L de água
+    Destino: V5 | Caminho: V3 -> V5 | Tempo: 5
+     Chegou e ainda tem 1L restantes
+ Posto V4 → V5
+    Caminho: V3 -> V5 | Tempo estimado: 5
+    Caminhões disponíveis: 2
+       Caminhão 1: 1/10L em V5
+       Caminhão 2: 10/10L em V4
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Caminhão saindo de V3 com 3L de água
+    Destino: V5 | Caminho: V3 -> V5 | Tempo: 5
+     Chegou e ainda tem 1L restantes
+ Posto V2 → V5
+    Caminho: V3 -> V5 | Tempo estimado: 5
+    Caminhões disponíveis: 2
+       Caminhão 1: 1/10L em V5
+       Caminhão 2: 10/10L em V2
+     Chegou tarde demais, o fogo já queimou o local.
+────────────────────────────────────────
+Fogo iniciado em: V1
+Vértices salvos (0): 
+Vértices queimados (6): V1, V0, V2, V4, V3, V5
+Tempo total até fim da propagação: 5
+Água total usada: 0 litros
+Caminhos dos brigadistas:
+  Nenhum brigadista conseguiu chegar a tempo.
+
+ Simulando combate com fogo iniciado em V0...
+
+
+ Fogo chegará em V0 no tempo 0
+ Requisitos: 6L de água, 2 brigadistas
+
+ Caminhão saindo de V5 com 1L de água
+    Destino: V0 | Caminho: V5 -> V4 -> V0 | Tempo: 4
+     Água insuficiente (1L). Buscando reabastecimento...
+     Fez reabastecimento em ponto de coleta
+ Caminhão reabastecendo em V5
+     Caminho após reabastecimento: V5 -> V4 -> V0
+     Chegou com 7L restantes
+ Posto V3 → V0
+    Caminho: V5 -> V4 -> V0 | Tempo estimado: 4
+    Caminhões disponíveis: 2
+       Caminhão 1: 7/10L em V0
+       Caminhão 2: 10/10L em V3
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Caminhão saindo de V5 com 1L de água
+    Destino: V0 | Caminho: V5 -> V4 -> V0 | Tempo: 4
+     Água insuficiente (1L). Buscando reabastecimento...
+     Fez reabastecimento em ponto de coleta
+ Caminhão reabastecendo em V5
+     Caminho após reabastecimento: V5 -> V4 -> V0
+     Chegou com 7L restantes
+ Posto V4 → V0
+    Caminho: V5 -> V4 -> V0 | Tempo estimado: 4
+    Caminhões disponíveis: 2
+       Caminhão 1: 7/10L em V0
+       Caminhão 2: 10/10L em V4
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Caminhão saindo de V5 com 1L de água
+    Destino: V0 | Caminho: V5 -> V4 -> V0 | Tempo: 4
+     Água insuficiente (1L). Buscando reabastecimento...
+     Fez reabastecimento em ponto de coleta
+ Caminhão reabastecendo em V5
+     Caminho após reabastecimento: V5 -> V4 -> V0
+     Chegou com 7L restantes
+ Posto V2 → V0
+    Caminho: V5 -> V4 -> V0 | Tempo estimado: 4
+    Caminhões disponíveis: 2
+       Caminhão 1: 7/10L em V0
+       Caminhão 2: 10/10L em V2
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Fogo chegará em V1 no tempo 1
+ Requisitos: 5L de água, 2 brigadistas
+
+ Caminhão saindo de V0 com 7L de água
+    Destino: V1 | Caminho: V0 -> V1 | Tempo: 1
+     Chegou e ainda tem 5L restantes
+ Posto V3 → V1
+    Caminho: V0 -> V1 | Tempo estimado: 1
+    Caminhões disponíveis: 2
+       Caminhão 1: 5/10L em V1
+       Caminhão 2: 10/10L em V3
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Caminhão saindo de V0 com 7L de água
+    Destino: V1 | Caminho: V0 -> V1 | Tempo: 1
+     Chegou e ainda tem 5L restantes
+ Posto V4 → V1
+    Caminho: V0 -> V1 | Tempo estimado: 1
+    Caminhões disponíveis: 2
+       Caminhão 1: 5/10L em V1
+       Caminhão 2: 10/10L em V4
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Caminhão saindo de V0 com 7L de água
+    Destino: V1 | Caminho: V0 -> V1 | Tempo: 1
+     Chegou e ainda tem 5L restantes
+ Posto V2 → V1
+    Caminho: V0 -> V1 | Tempo estimado: 1
+    Caminhões disponíveis: 2
+       Caminhão 1: 5/10L em V1
+       Caminhão 2: 10/10L em V2
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Fogo chegará em V4 no tempo 3
+ Requisitos: 5L de água, 2 brigadistas
+
+ Caminhão saindo de V1 com 5L de água
+    Destino: V4 | Caminho: V1 -> V0 -> V4 | Tempo: 4
+     Chegou e ainda tem 2L restantes
+ Posto V3 → V4
+    Caminho: V1 -> V0 -> V4 | Tempo estimado: 4
+    Caminhões disponíveis: 2
+       Caminhão 1: 2/10L em V4
+       Caminhão 2: 10/10L em V3
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Caminhão saindo de V1 com 5L de água
+    Destino: V4 | Caminho: V1 -> V0 -> V4 | Tempo: 4
+     Chegou e ainda tem 2L restantes
+ Posto V4 → V4
+    Caminho: V1 -> V0 -> V4 | Tempo estimado: 4
+    Caminhões disponíveis: 2
+       Caminhão 1: 2/10L em V4
+       Caminhão 2: 10/10L em V4
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Caminhão saindo de V1 com 5L de água
+    Destino: V4 | Caminho: V1 -> V0 -> V4 | Tempo: 4
+     Chegou e ainda tem 2L restantes
+ Posto V2 → V4
+    Caminho: V1 -> V0 -> V4 | Tempo estimado: 4
+    Caminhões disponíveis: 2
+       Caminhão 1: 2/10L em V4
+       Caminhão 2: 10/10L em V2
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Fogo chegará em V3 no tempo 4
+ Requisitos: 5L de água, 1 brigadistas
+
+ Caminhão saindo de V4 com 2L de água
+    Destino: V3 | Caminho: V4 -> V5 -> V3 | Tempo: 6
+     Água insuficiente (2L). Buscando reabastecimento...
+     Fez reabastecimento em ponto de coleta
+ Caminhão reabastecendo em V4
+     Caminho após reabastecimento: V4 -> V5 -> V3
+     Chegou com 7L restantes
+ Posto V3 → V3
+    Caminho: V4 -> V5 -> V3 | Tempo estimado: 6
+    Caminhões disponíveis: 2
+       Caminhão 1: 7/10L em V3
+       Caminhão 2: 10/10L em V3
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Caminhão saindo de V4 com 2L de água
+    Destino: V3 | Caminho: V4 -> V5 -> V3 | Tempo: 6
+     Água insuficiente (2L). Buscando reabastecimento...
+     Fez reabastecimento em ponto de coleta
+ Caminhão reabastecendo em V4
+     Caminho após reabastecimento: V4 -> V5 -> V3
+     Chegou com 7L restantes
+ Posto V4 → V3
+    Caminho: V4 -> V5 -> V3 | Tempo estimado: 6
+    Caminhões disponíveis: 2
+       Caminhão 1: 7/10L em V3
+       Caminhão 2: 10/10L em V4
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Caminhão saindo de V4 com 2L de água
+    Destino: V3 | Caminho: V4 -> V5 -> V3 | Tempo: 6
+     Água insuficiente (2L). Buscando reabastecimento...
+     Fez reabastecimento em ponto de coleta
+ Caminhão reabastecendo em V4
+     Caminho após reabastecimento: V4 -> V5 -> V3
+     Chegou com 7L restantes
+ Posto V2 → V3
+    Caminho: V4 -> V5 -> V3 | Tempo estimado: 6
+    Caminhões disponíveis: 2
+       Caminhão 1: 7/10L em V3
+       Caminhão 2: 10/10L em V2
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Fogo chegará em V2 no tempo 4
+ Requisitos: 5L de água, 2 brigadistas
+
+ Caminhão saindo de V3 com 7L de água
+    Destino: V2 | Caminho: V3 -> V0 -> V1 -> V2 | Tempo: 8
+     Chegou e ainda tem 3L restantes
+ Posto V3 → V2
+    Caminho: V3 -> V0 -> V1 -> V2 | Tempo estimado: 8
+    Caminhões disponíveis: 2
+       Caminhão 1: 3/10L em V2
+       Caminhão 2: 10/10L em V3
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Caminhão saindo de V3 com 7L de água
+    Destino: V2 | Caminho: V3 -> V0 -> V1 -> V2 | Tempo: 8
+     Chegou e ainda tem 3L restantes
+ Posto V4 → V2
+    Caminho: V3 -> V0 -> V1 -> V2 | Tempo estimado: 8
+    Caminhões disponíveis: 2
+       Caminhão 1: 3/10L em V2
+       Caminhão 2: 10/10L em V4
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Caminhão saindo de V3 com 7L de água
+    Destino: V2 | Caminho: V3 -> V0 -> V1 -> V2 | Tempo: 8
+     Chegou e ainda tem 3L restantes
+ Posto V2 → V2
+    Caminho: V3 -> V0 -> V1 -> V2 | Tempo estimado: 8
+    Caminhões disponíveis: 2
+       Caminhão 1: 3/10L em V2
+       Caminhão 2: 10/10L em V2
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Fogo chegará em V5 no tempo 4
+ Requisitos: 5L de água, 2 brigadistas
+
+ Caminhão saindo de V2 com 3L de água
+    Destino: V5 | Caminho: V2 -> V1 -> V0 -> V4 -> V5 | Tempo: 8
+     Água insuficiente (3L). Buscando reabastecimento...
+     Fez reabastecimento em ponto de coleta
+ Caminhão reabastecendo em V2
+     Caminho após reabastecimento: V2 -> V1 -> V0 -> V4 -> V5
+     Chegou com 5L restantes
+ Posto V3 → V5
+    Caminho: V2 -> V1 -> V0 -> V4 -> V5 | Tempo estimado: 8
+    Caminhões disponíveis: 2
+       Caminhão 1: 5/10L em V5
+       Caminhão 2: 10/10L em V3
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Caminhão saindo de V2 com 3L de água
+    Destino: V5 | Caminho: V2 -> V1 -> V0 -> V4 -> V5 | Tempo: 8
+     Água insuficiente (3L). Buscando reabastecimento...
+     Fez reabastecimento em ponto de coleta
+ Caminhão reabastecendo em V2
+     Caminho após reabastecimento: V2 -> V1 -> V0 -> V4 -> V5
+     Chegou com 5L restantes
+ Posto V4 → V5
+    Caminho: V2 -> V1 -> V0 -> V4 -> V5 | Tempo estimado: 8
+    Caminhões disponíveis: 2
+       Caminhão 1: 5/10L em V5
+       Caminhão 2: 10/10L em V4
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Caminhão saindo de V2 com 3L de água
+    Destino: V5 | Caminho: V2 -> V1 -> V0 -> V4 -> V5 | Tempo: 8
+     Água insuficiente (3L). Buscando reabastecimento...
+     Fez reabastecimento em ponto de coleta
+ Caminhão reabastecendo em V2
+     Caminho após reabastecimento: V2 -> V1 -> V0 -> V4 -> V5
+     Chegou com 5L restantes
+ Posto V2 → V5
+    Caminho: V2 -> V1 -> V0 -> V4 -> V5 | Tempo estimado: 8
+    Caminhões disponíveis: 2
+       Caminhão 1: 5/10L em V5
+       Caminhão 2: 10/10L em V2
+     Chegou tarde demais, o fogo já queimou o local.
+────────────────────────────────────────
+Fogo iniciado em: V0
+Vértices salvos (0): 
+Vértices queimados (6): V0, V1, V4, V3, V2, V5
+Tempo total até fim da propagação: 4
+Água total usada: 0 litros
+Caminhos dos brigadistas:
+  Nenhum brigadista conseguiu chegar a tempo.
+
+ Simulando combate com fogo iniciado em V5...
+
+
+ Fogo chegará em V5 no tempo 0
+ Requisitos: 5L de água, 2 brigadistas
+
+ Caminhão saindo de V5 com 5L de água
+    Destino: V5 | Caminho: V5 | Tempo: 0
+     Chegou e ainda tem 4L restantes
+ Posto V3 → V5
+    Caminho: V5 | Tempo estimado: 0
+    Caminhões disponíveis: 2
+       Caminhão 1: 4/10L em V5
+       Caminhão 2: 10/10L em V3
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Caminhão saindo de V5 com 5L de água
+    Destino: V5 | Caminho: V5 | Tempo: 0
+     Chegou e ainda tem 4L restantes
+ Posto V4 → V5
+    Caminho: V5 | Tempo estimado: 0
+    Caminhões disponíveis: 2
+       Caminhão 1: 4/10L em V5
+       Caminhão 2: 10/10L em V4
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Caminhão saindo de V5 com 5L de água
+    Destino: V5 | Caminho: V5 | Tempo: 0
+     Chegou e ainda tem 4L restantes
+ Posto V2 → V5
+    Caminho: V5 | Tempo estimado: 0
+    Caminhões disponíveis: 2
+       Caminhão 1: 4/10L em V5
+       Caminhão 2: 10/10L em V2
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Fogo chegará em V4 no tempo 1
+ Requisitos: 5L de água, 2 brigadistas
+
+ Caminhão saindo de V5 com 4L de água
+    Destino: V4 | Caminho: V5 -> V4 | Tempo: 1
+     Chegou e ainda tem 2L restantes
+ Posto V3 → V4
+    Caminho: V5 -> V4 | Tempo estimado: 1
+    Caminhões disponíveis: 2
+       Caminhão 1: 2/10L em V4
+       Caminhão 2: 10/10L em V3
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Caminhão saindo de V5 com 4L de água
+    Destino: V4 | Caminho: V5 -> V4 | Tempo: 1
+     Chegou e ainda tem 2L restantes
+ Posto V4 → V4
+    Caminho: V5 -> V4 | Tempo estimado: 1
+    Caminhões disponíveis: 2
+       Caminhão 1: 2/10L em V4
+       Caminhão 2: 10/10L em V4
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Caminhão saindo de V5 com 4L de água
+    Destino: V4 | Caminho: V5 -> V4 | Tempo: 1
+     Chegou e ainda tem 2L restantes
+ Posto V2 → V4
+    Caminho: V5 -> V4 | Tempo estimado: 1
+    Caminhões disponíveis: 2
+       Caminhão 1: 2/10L em V4
+       Caminhão 2: 10/10L em V2
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Fogo chegará em V0 no tempo 4
+ Requisitos: 6L de água, 2 brigadistas
+
+ Caminhão saindo de V4 com 2L de água
+    Destino: V0 | Caminho: V4 -> V0 | Tempo: 3
+     Chegou e ainda tem 0L restantes
+ Posto V3 → V0
+    Caminho: V4 -> V0 | Tempo estimado: 3
+    Caminhões disponíveis: 2
+       Caminhão 1: 0/10L em V0
+       Caminhão 2: 10/10L em V3
+     Chegou a tempo, mas sem água ou caminhões suficientes.
+
+ Caminhão saindo de V4 com 2L de água
+    Destino: V0 | Caminho: V4 -> V0 | Tempo: 3
+     Chegou e ainda tem 0L restantes
+ Posto V4 → V0
+    Caminho: V4 -> V0 | Tempo estimado: 3
+    Caminhões disponíveis: 2
+       Caminhão 1: 0/10L em V0
+       Caminhão 2: 10/10L em V4
+     Chegou a tempo, mas sem água ou caminhões suficientes.
+
+ Caminhão saindo de V4 com 2L de água
+    Destino: V0 | Caminho: V4 -> V0 | Tempo: 3
+     Chegou e ainda tem 0L restantes
+ Posto V2 → V0
+    Caminho: V4 -> V0 | Tempo estimado: 3
+    Caminhões disponíveis: 2
+       Caminhão 1: 0/10L em V0
+       Caminhão 2: 10/10L em V2
+     Chegou a tempo, mas sem água ou caminhões suficientes.
+
+ Fogo chegará em V3 no tempo 5
+ Requisitos: 5L de água, 1 brigadistas
+
+ Caminhão saindo de V0 com 0L de água
+    Destino: V3 | Caminho: V0 -> V3 | Tempo: 4
+     Água insuficiente (0L). Buscando reabastecimento...
+     Fez reabastecimento em ponto de coleta
+ Caminhão reabastecendo em V0
+     Caminho após reabastecimento: V0 -> V3
+     Chegou com 8L restantes
+ Posto V3 → V3
+    Caminho: V0 -> V3 | Tempo estimado: 4
+    Caminhões disponíveis: 2
+       Caminhão 1: 8/10L em V3
+       Caminhão 2: 10/10L em V3
+     Chegou com 5L e apagou o fogo. Restante: 3L
+
+ Fogo chegará em V1 no tempo 5
+ Requisitos: 5L de água, 2 brigadistas
+
+ Caminhão saindo de V3 com 3L de água
+    Destino: V1 | Caminho: V3 -> V0 -> V1 | Tempo: 5
+     Chegou e ainda tem 0L restantes
+ Posto V3 → V1
+    Caminho: V3 -> V0 -> V1 | Tempo estimado: 5
+    Caminhões disponíveis: 2
+       Caminhão 1: 0/10L em V1
+       Caminhão 2: 10/10L em V3
+     Chegou tarde demais, o fogo já queimou o local.
+
+ Caminhão saindo de V0 com 0L de água
+    Destino: V1 | Caminho: V0 -> V1 | Tempo: 1
+     Água insuficiente (0L). Buscando reabastecimento...
+     Fez reabastecimento em ponto de coleta
+ Caminhão reabastecendo em V0
+     Caminho após reabastecimento: V0 -> V1
+     Chegou com 8L restantes
+ Posto V4 → V1
+    Caminho: V0 -> V1 | Tempo estimado: 1
+    Caminhões disponíveis: 2
+       Caminhão 1: 8/10L em V1
+       Caminhão 2: 10/10L em V4
+     Chegou com 5L e apagou o fogo. Restante: 3L
+
+ Fogo chegará em V2 no tempo 8
+ Requisitos: 5L de água, 2 brigadistas
+
+ Caminhão saindo de V1 com 0L de água
+    Destino: V2 | Caminho: V1 -> V2 | Tempo: 3
+     Água insuficiente (0L). Buscando reabastecimento...
+     Fez reabastecimento em ponto de coleta
+ Caminhão reabastecendo em V1
+     Caminho após reabastecimento: V1 -> V2
+     Chegou com 8L restantes
+ Posto V3 → V2
+    Caminho: V1 -> V2 | Tempo estimado: 3
+    Caminhões disponíveis: 2
+       Caminhão 1: 8/10L em V2
+       Caminhão 2: 10/10L em V3
+     Chegou com 5L e apagou o fogo. Restante: 3L
+────────────────────────────────────────
+Fogo iniciado em: V5
+Vértices salvos (3): V3, V1, V2
+Vértices queimados (3): V5, V4, V0
+Tempo total até fim da propagação: 8
+Água total usada: 15 litros
+Caminhos dos brigadistas:
+  - V3: V0 -> V3
+  - V1: V0 -> V1
+  - V2: V1 -> V2

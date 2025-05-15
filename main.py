@@ -4,6 +4,12 @@ from brigadistas import PostoBrigada
 from simulador import simular_combate_fogo
 from incendio import simular_propagacao_fogo
 import random
+import sys
+import datetime
+
+agora = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+arquivo = open(f"relatorio_{agora}.txt", "w", encoding="utf-8")
+sys.stdout = arquivo
 
 # Gera o grafo e posições aleatórias de postos, coleta e foco inicial
 grafo_dados, postos, pontos_de_coleta, origem_incendio = gerar_grafo_aleatorio()
@@ -69,3 +75,7 @@ for origem in grafo.adjacencia:
             print(f"  - {destino}: {' -> '.join(caminho)}")
     else:
         print("  Nenhum brigadista conseguiu chegar a tempo.")
+
+sys.stdout = sys.__stdout__
+arquivo.close()
+print(f"\n✅ Relatório salvo como relatorio_{agora}.txt")
