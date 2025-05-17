@@ -43,7 +43,7 @@ Este projeto simula o combate a incêndios em regiões representadas por grafos.
   - Uma quantidade de brigadistas (1 ou 2)
 
 #### 4. Propagação do fogo
-- O fogo começa em um vértice aleatório (ou múltiplos, um por simulação).
+- O fogo começa em um vértice aleatório (um por simulação).
 - Propaga-se para os vizinhos com base nos tempos das arestas (BFS adaptado).
 
 #### 5. Combate ao fogo
@@ -84,7 +84,7 @@ Caminhos dos brigadistas:
 ### Testes realizados e limitações
 
 #### Testes
-- Diferentes grafos aleatórios com até 20 vértices
+- Diferentes grafos aleatórios com 6 vértices
 - Diversos focos de incêndio sucessivos
 - Validação de chegada antes da queima
 - Verificação da lógica de reabastecimento
